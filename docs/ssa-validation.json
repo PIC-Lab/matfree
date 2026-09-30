@@ -1,0 +1,313 @@
+{
+  "date": "2026-09-30",
+  "scope": "selected finite SSA modes versus full-spectrum dense SSA; single sequential runs, sparse times include compilation; not warm benchmarks",
+  "environment": {
+    "jax": "0.11.1",
+    "jaxlib": "0.11.1",
+    "numpy": "2.4.6",
+    "scipy": "1.18.1",
+    "spineax": "0.0.5+emt4"
+  },
+  "verification": {
+    "jax_emt_focused": "32 passed, 2 GPU-only skipped, 2 deselected",
+    "matfree_cpu": "114 passed, 1 GPU-only skipped",
+    "matfree_gpu": "16 passed",
+    "release_api_docs": "83/83",
+    "release_capabilities": "fresh"
+  },
+  "cases": [
+    {
+      "case": "two-area",
+      "order": 40,
+      "dense_build_linearize_and_solve_seconds": 2.1624309250037186,
+      "jax": "0.11.1",
+      "scope": "selected finite modes, dense assembly retained; timings include Arnoldi compilation",
+      "comparisons": {
+        "scipy": {
+          "eigenvalue_max_error": 1.3734944117564458e-14,
+          "participation_max_error": 1.7763568394002505e-15,
+          "right_residual_max": 1.547822228893778e-17,
+          "left_residual_max": 1.2962608455547288e-17,
+          "balanced_right_residual_max": 1.0190592953651838e-16,
+          "balanced_left_residual_max": 1.486876755928673e-16,
+          "subspace_sizes": [
+            16,
+            24
+          ],
+          "factorizations": 2,
+          "solves": 86,
+          "timings": {
+            "preparation_seconds": 0.009537549995002337,
+            "factorization_seconds": 0.010814188994118012,
+            "iteration_seconds": 0.5122677140025189,
+            "total_seconds": 0.5326197889953619
+          },
+          "eigenvalues": [
+            [
+              -0.5851113674986996,
+              6.810491162502197
+            ],
+            [
+              -0.5890314656945557,
+              7.033553634953861
+            ],
+            [
+              -0.09146068435006083,
+              3.4192748820996797
+            ]
+          ]
+        },
+        "cudss": {
+          "eigenvalue_max_error": 1.6517115443177305e-14,
+          "participation_max_error": 1.0547118733938987e-15,
+          "right_residual_max": 1.671866528641213e-17,
+          "left_residual_max": 1.5300931103419653e-17,
+          "balanced_right_residual_max": 1.1464338017754733e-16,
+          "balanced_left_residual_max": 1.7396447581302754e-16,
+          "subspace_sizes": [
+            16,
+            24
+          ],
+          "factorizations": 2,
+          "solves": 86,
+          "timings": {
+            "preparation_seconds": 0.00781964800262358,
+            "factorization_seconds": 0.7536894390068483,
+            "iteration_seconds": 1.0841846659895964,
+            "total_seconds": 1.8456940980104264
+          },
+          "eigenvalues": [
+            [
+              -0.5851113674987,
+              6.810491162502192
+            ],
+            [
+              -0.5890314656945553,
+              7.033553634953858
+            ],
+            [
+              -0.09146068435005782,
+              3.4192748820996726
+            ]
+          ]
+        }
+      },
+      "unscaled_dense_eigensolve_seconds": 0.00022640200040768832,
+      "unscaled_vs_balanced_dense_eigenvalue_max_error": 0.0,
+      "balanced_dense_eigensolve_seconds": 0.00022640200040768832,
+      "source_sha256": {
+        "tools/qualify_sparse_ssa.py": "eee744ff3e917885fd941e62234402a6777224167a517f13c22516f445bf6272",
+        "jax_emt/ssa/sparse.py": "d44b9bbfe7a130cbf2acfc70c688a4319b3d18d9e3bcd1ce2a57c499cf70ff56",
+        "jax_emt/ssa/descriptor.py": "c57f1e1c366d1918edfe2c08f15f8e72296333ba352543cb9e5fff85fc11f667",
+        "jax_emt/compilation/conductor.py": "6140bb46deb1a3ea178bbd825d33ca86aee0647d183e9e4e759298306686d51d",
+        "matfree/generalized.py": "775d8f90563e65f5ae49c06fc67bf16b500302c2ede2cb2a1384b15d18ce4660"
+      }
+    },
+    {
+      "case": "13",
+      "order": 323,
+      "dense_build_linearize_and_solve_seconds": 3.1156742530001793,
+      "jax": "0.11.1",
+      "scope": "selected finite modes, dense assembly retained; timings include Arnoldi compilation",
+      "comparisons": {
+        "scipy": {
+          "eigenvalue_max_error": 2.8238122615934857e-07,
+          "participation_max_error": 6.2293219471598604e-09,
+          "right_residual_max": 1.4659662430702205e-21,
+          "left_residual_max": 5.584176304048758e-21,
+          "balanced_right_residual_max": 1.224864629837552e-16,
+          "balanced_left_residual_max": 2.1511970418154334e-16,
+          "subspace_sizes": [
+            24,
+            36,
+            54,
+            81,
+            122
+          ],
+          "factorizations": 2,
+          "solves": 654,
+          "timings": {
+            "preparation_seconds": 0.010770070992293768,
+            "factorization_seconds": 0.011000195998349227,
+            "iteration_seconds": 1.3497656670078868,
+            "total_seconds": 1.371536209990154
+          },
+          "eigenvalues": [
+            [
+              -96.6929560791921,
+              6.828877524623202
+            ],
+            [
+              -273.50576781456556,
+              61.60841446186484
+            ],
+            [
+              -267.14854540349563,
+              101.57379677235897
+            ],
+            [
+              -266.7133545544948,
+              103.90707424049012
+            ]
+          ]
+        },
+        "cudss": {
+          "eigenvalue_max_error": 2.268276484528577e-07,
+          "participation_max_error": 6.5553134587226225e-09,
+          "right_residual_max": 1.8127912719119314e-21,
+          "left_residual_max": 5.7523797603904196e-21,
+          "balanced_right_residual_max": 9.052270372940027e-17,
+          "balanced_left_residual_max": 2.211450934475312e-16,
+          "subspace_sizes": [
+            24,
+            36,
+            54,
+            81,
+            122
+          ],
+          "factorizations": 2,
+          "solves": 654,
+          "timings": {
+            "preparation_seconds": 0.009920757001964375,
+            "factorization_seconds": 0.7871240279928315,
+            "iteration_seconds": 3.5195854829944437,
+            "total_seconds": 4.316630474990234
+          },
+          "eigenvalues": [
+            [
+              -96.69295607803782,
+              6.8288775253243
+            ],
+            [
+              -273.5057677673436,
+              61.60841443115515
+            ],
+            [
+              -267.14854540109997,
+              101.57379676721537
+            ],
+            [
+              -266.7133545524904,
+              103.9070742416772
+            ]
+          ]
+        }
+      },
+      "unscaled_dense_eigensolve_seconds": 0.07168591499794275,
+      "unscaled_vs_balanced_dense_eigenvalue_max_error": 0.16716495600673226,
+      "balanced_dense_eigensolve_seconds": 0.07838970299053472,
+      "source_sha256": {
+        "tools/qualify_sparse_ssa.py": "eee744ff3e917885fd941e62234402a6777224167a517f13c22516f445bf6272",
+        "jax_emt/ssa/sparse.py": "d44b9bbfe7a130cbf2acfc70c688a4319b3d18d9e3bcd1ce2a57c499cf70ff56",
+        "jax_emt/ssa/descriptor.py": "c57f1e1c366d1918edfe2c08f15f8e72296333ba352543cb9e5fff85fc11f667",
+        "jax_emt/compilation/conductor.py": "6140bb46deb1a3ea178bbd825d33ca86aee0647d183e9e4e759298306686d51d",
+        "matfree/generalized.py": "775d8f90563e65f5ae49c06fc67bf16b500302c2ede2cb2a1384b15d18ce4660"
+      }
+    },
+    {
+      "case": "123",
+      "order": 1675,
+      "dense_build_linearize_and_solve_seconds": 32.44778718199814,
+      "jax": "0.11.1",
+      "scope": "selected finite modes, dense assembly retained; timings include Arnoldi compilation",
+      "comparisons": {
+        "scipy": {
+          "eigenvalue_max_error": 8.280471046069034e-07,
+          "participation_max_error": 3.0896934021668043e-09,
+          "right_residual_max": 1.1402374509740722e-21,
+          "left_residual_max": 1.85461938267876e-21,
+          "balanced_right_residual_max": 8.589936142276383e-17,
+          "balanced_left_residual_max": 2.9054927063020504e-16,
+          "subspace_sizes": [
+            24,
+            36,
+            54,
+            81,
+            122,
+            183,
+            192
+          ],
+          "factorizations": 2,
+          "solves": 1412,
+          "timings": {
+            "preparation_seconds": 0.032597326004179195,
+            "factorization_seconds": 0.020753723991219886,
+            "iteration_seconds": 3.4210965689999284,
+            "total_seconds": 3.4744479219953064
+          },
+          "eigenvalues": [
+            [
+              -96.61245776849282,
+              5.8718600426714165
+            ],
+            [
+              -272.15895021766255,
+              73.36155112914413
+            ],
+            [
+              -268.10936822310805,
+              99.38376265300296
+            ],
+            [
+              -265.3779083616551,
+              109.37396790627248
+            ]
+          ]
+        },
+        "cudss": {
+          "eigenvalue_max_error": 8.246495784801941e-07,
+          "participation_max_error": 2.8955989828105544e-09,
+          "right_residual_max": 1.1758331935180382e-21,
+          "left_residual_max": 2.256416665389372e-21,
+          "balanced_right_residual_max": 5.333565766522389e-17,
+          "balanced_left_residual_max": 2.8340849997671877e-16,
+          "subspace_sizes": [
+            24,
+            36,
+            54,
+            81,
+            122,
+            183,
+            192
+          ],
+          "factorizations": 2,
+          "solves": 1412,
+          "timings": {
+            "preparation_seconds": 0.03325935000611935,
+            "factorization_seconds": 0.8442637410043972,
+            "iteration_seconds": 6.283732855998096,
+            "total_seconds": 7.161256225008401
+          },
+          "eigenvalues": [
+            [
+              -96.61245776714767,
+              5.871860042581641
+            ],
+            [
+              -272.1589501871485,
+              73.36155113013068
+            ],
+            [
+              -268.10936822481574,
+              99.38376265110772
+            ],
+            [
+              -265.37790836205824,
+              109.37396790647442
+            ]
+          ]
+        }
+      },
+      "unscaled_dense_eigensolve_seconds": 23.663453027998912,
+      "unscaled_vs_balanced_dense_eigenvalue_max_error": 0.05730530307034396,
+      "balanced_dense_eigensolve_seconds": 24.84421685799316,
+      "source_sha256": {
+        "tools/qualify_sparse_ssa.py": "eee744ff3e917885fd941e62234402a6777224167a517f13c22516f445bf6272",
+        "jax_emt/ssa/sparse.py": "d44b9bbfe7a130cbf2acfc70c688a4319b3d18d9e3bcd1ce2a57c499cf70ff56",
+        "jax_emt/ssa/descriptor.py": "c57f1e1c366d1918edfe2c08f15f8e72296333ba352543cb9e5fff85fc11f667",
+        "jax_emt/compilation/conductor.py": "6140bb46deb1a3ea178bbd825d33ca86aee0647d183e9e4e759298306686d51d",
+        "matfree/generalized.py": "775d8f90563e65f5ae49c06fc67bf16b500302c2ede2cb2a1384b15d18ce4660"
+      }
+    }
+  ]
+}

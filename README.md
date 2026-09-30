@@ -1,5 +1,8 @@
 # Matfree: Matrix-free linear algebra in JAX
 
+PIC-Lab fork: [generalized sparse SSA with SciPy/cuDSS](docs/generalized-ssa.md).
+The optional generalized solver adds host orchestration; the upstream APIs below remain unchanged.
+
 [![CI](https://github.com/pnkraemer/matfree/workflows/ci/badge.svg)](https://github.com/pnkraemer/matfree/actions)
 [![PyPI version](https://img.shields.io/pypi/v/matfree.svg?color=1E4E8C)](https://pypi.org/project/matfree/)
 [![License](https://img.shields.io/pypi/l/matfree.svg?color=1E4E8C)](https://pypi.org/project/matfree/)

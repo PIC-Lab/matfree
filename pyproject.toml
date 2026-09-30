@@ -25,6 +25,8 @@ dynamic = ["version"]
 
 
 [project.optional-dependencies]
+ssa = ["jax>=0.10,<0.12", "numpy>=2,<3", "scipy>=1.14,<2"]
+ssa-cudss = ["matfree[ssa]", "spineax==0.0.5"]
 cpu = [
     "jax[cpu]",
 ]
